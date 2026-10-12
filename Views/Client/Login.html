@@ -1,0 +1,42 @@
+<div class="auth-box">
+    <h2>Авторизація</h2>
+    <!-- Прибрали action та method, додали id="loginForm" -->
+    <form id="loginForm" class="auth-form">
+        <div class="input-group">
+            <label for="email">Email або Логін</label>
+            <input type="text" id="email" placeholder="Введіть ваш логін" required>
+        </div>
+        <div class="input-group">
+            <label for="password">Пароль</label>
+            <input type="password" id="password" placeholder="Введіть пароль" required>
+        </div>
+        
+        <div class="role-selector">
+            <label><input type="radio" name="role" value="client" checked> Клієнт</label>
+            <label><input type="radio" name="role" value="admin"> Адміністратор</label>
+        </div>
+
+        <button type="submit" class="btn-primary auth-btn">Увійти</button>
+    </form>
+    
+    <div class="auth-footer">
+        <p>Немає акаунту? <a href="Register.html">Зареєструватися</a></p>
+    </div>
+</div>
+
+<script>
+    // Логіка перенаправлення залежно від ролі
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Зупиняємо стандартну відправку форми
+        
+        const role = document.querySelector('input[name="role"]:checked').value;
+        
+        if (role === 'admin') {
+            window.location.href = '../Admin/Dashboard.html'; // В адмінку
+        } else {
+            window.location.href = 'Index.html'; // На головну афішу
+        }
+    });
+</script>
+</body>
+</html>

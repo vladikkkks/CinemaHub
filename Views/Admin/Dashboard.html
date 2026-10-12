@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - CinemaHub</title>
+    <link rel="stylesheet" href="../../static/css/admin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Бокове меню -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <i class="fas fa-film"></i> CinemaHub Admin
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="active"><i class="fas fa-chart-line"></i> Статистика</a>
+                <a href="#"><i class="fas fa-video"></i> Сеанси та Фільми</a>
+                <a href="#"><i class="fas fa-ticket-alt"></i> Продажі квитків</a>
+                <a href="#"><i class="fas fa-file-invoice"></i> Звіти (RDLC/Crystal)</a>
+            </nav>
+            <div class="sidebar-footer">
+                <p>Адміністратор: В. Прус</p>
+                <a href="../Client/Index.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Вийти</a>
+            </div>
+        </aside>
+
+        <!-- Основна робоча область -->
+        <main class="main-content">
+            <header class="topbar">
+                <h2>Огляд системи (Жовтень 2026)</h2>
+                <div class="user-profile">
+                    <img src="https://via.placeholder.com/40" alt="Admin" class="avatar">
+                </div>
+            </header>
+
+            <!-- Карточки статистики -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: rgba(229, 9, 20, 0.2); color: #e50914;"><i class="fas fa-wallet"></i></div>
+                    <div class="stat-info">
+                        <h3>Загальна виручка</h3>
+                        <p class="value">145,200 грн</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: rgba(56, 161, 105, 0.2); color: #38a169;"><i class="fas fa-ticket-alt"></i></div>
+                    <div class="stat-info">
+                        <h3>Продано квитків</h3>
+                        <p class="value">648 шт.</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: rgba(49, 130, 206, 0.2); color: #3182ce;"><i class="fas fa-users"></i></div>
+                    <div class="stat-info">
+                        <h3>Активні броні</h3>
+                        <p class="value">24</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Блок генерації звітів -->
+            <div class="reports-section">
+                <h3>Генерація звітності</h3>
+                <div class="report-actions">
+                    <button class="btn-report pdf-btn"><i class="fas fa-file-pdf"></i> Фінансовий звіт (Crystal Reports)</button>
+                    <button class="btn-report print-btn"><i class="fas fa-print"></i> Теплова карта залів (RDLC)</button>
+                    <button class="btn-report excel-btn"><i class="fas fa-file-excel"></i> Експорт у Excel</button>
+                </div>
+            </div>
+
+            <!-- Останні транзакції -->
+            <div class="table-container">
+                <h3>Останні продажі</h3>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID Квитка</th>
+                            <th>Клієнт</th>
+                            <th>Фільм</th>
+                            <th>Зал та Місце</th>
+                            <th>Сума</th>
+                            <th>Статус</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#1001</td>
+                            <td>Олександр Іваненко</td>
+                            <td>Дюна: Частина друга</td>
+                            <td>VIP Lounge (М12)</td>
+                            <td>320 грн</td>
+                            <td><span class="badge success">Оплачено</span></td>
+                        </tr>
+                        <tr>
+                            <td>#1002</td>
+                            <td>Марія Бондаренко</td>
+                            <td>Оппенгеймер</td>
+                            <td>Зал 1 (М45)</td>
+                            <td>220 грн</td>
+                            <td><span class="badge success">Оплачено</span></td>
+                        </tr>
+                        <tr>
+                            <td>#1003</td>
+                            <td>Віктор Мороз</td>
+                            <td>Інтерстеллар</td>
+                            <td>Зал 2 (М14)</td>
+                            <td>180 грн</td>
+                            <td><span class="badge warning">Бронь</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+<script src="../../static/js/admin.js"></script>
+</body>
+</html>

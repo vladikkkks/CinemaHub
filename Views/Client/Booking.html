@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вибір місць - CinemaHub</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="booking-body">
+    <nav class="navbar">
+        <div class="logo"><i class="fas fa-film"></i> CinemaHub</div>
+        <div class="nav-links">
+    <a href="Index.html" class="active">Афіша</a>
+    <a href="Booking.html">Квитки</a>
+    <a href="../Admin/Dashboard.html" class="admin-link"><i class="fas fa-lock"></i> Адмін-панель</a>
+    <!-- Нова кнопка входу/реєстрації -->
+    <a href="Login.html" class="btn-primary" style="padding: 8px 20px; margin-left: 20px; font-size: 0.95rem;">
+        <i class="fas fa-user"></i> Увійти
+    </a>
+</div>
+
+    <main class="booking-container fade-in">
+        <div class="movie-info-header">
+            <h2>Оппенгеймер</h2>
+            <p>Сьогодні, 19:00 | VIP Lounge</p>
+        </div>
+
+        <ul class="showcase">
+            <li><div class="seat"></div><small>Вільне</small></li>
+            <li><div class="seat selected"></div><small>Обране</small></li>
+            <li><div class="seat occupied"></div><small>Зайняте</small></li>
+        </ul>
+
+        <div class="cinema-room">
+            <div class="screen">ЕКРАН</div>
+            
+            <div class="seating-grid">
+                <!-- Ряд 1 -->
+                <div class="row">
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                </div>
+                <!-- Ряд 2 -->
+                <div class="row">
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat occupied"></div>
+                </div>
+                <!-- Ряд 3 -->
+                <div class="row">
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checkout-panel">
+            <p class="text">Обрано місць: <span id="count">0</span></p>
+            <p class="text">До сплати: <span id="total">0</span> грн</p>
+            <button id="checkout-btn" class="btn-primary" disabled>Оплатити квитки</button>
+        </div>
+    </main>
+
+    <script src="../../static/js/seat-selection.js"></script>
+</body>
+</html>

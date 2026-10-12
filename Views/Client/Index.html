@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinemaHub - Головна</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <!-- Підключаємо іконки -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Навігація -->
+<div class="nav-links">
+    <a href="Index.html" class="active">Афіша</a>
+    <a href="Booking.html">Квитки</a>
+    <a href="../Admin/Dashboard.html" class="admin-link"><i class="fas fa-lock"></i> Адмін-панель</a>
+    <!-- Нова кнопка входу/реєстрації -->
+    <a href="Login.html" class="btn-primary" style="padding: 8px 20px; margin-left: 20px; font-size: 0.95rem;">
+        <i class="fas fa-user"></i> Увійти
+    </a>
+</div>
+
+    <!-- Головний банер -->
+    <header class="hero">
+        <div class="hero-content fade-in">
+            <h1>Поринь у світ кіно</h1>
+            <p>Найкращі прем'єри сезону вже на великих екранах</p>
+            <a href="#movies" class="btn-primary">Дивитись афішу</a>
+        </div>
+    </header>
+
+    <!-- Основний контент -->
+    <main id="movies" class="container">
+        <h2 class="section-title fade-in">Сьогодні у кіно</h2>
+        <div class="movie-grid">
+    <!-- Картка 1 -->
+    <div class="movie-card fade-in">
+        <div class="poster-container">
+            <img src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2JGjjc91p.jpg" alt="Дюна 2" onerror="this.src='https://via.placeholder.com/500x750/1c1c1e/e50914?text=Dune+2'">
+            <div class="overlay"><a href="Booking.html" class="btn-buy">Купити квиток</a></div>
+        </div>
+        <div class="movie-info">
+            <h3>Дюна: Частина друга</h3>
+            <p class="genre">Наукова Фантастика</p>
+            <div class="movie-meta"><span class="rating">16+</span><span class="price">від 200 грн</span></div>
+        </div>
+    </div>
+
+    <!-- Картка 2 -->
+    <div class="movie-card fade-in" style="animation-delay: 0.1s">
+        <div class="poster-container">
+            <img src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MvrIdvwF.jpg" alt="Інтерстеллар" onerror="this.src='https://via.placeholder.com/500x750/1c1c1e/e50914?text=Interstellar'">
+            <div class="overlay"><a href="Booking.html" class="btn-buy">Купити квиток</a></div>
+        </div>
+        <div class="movie-info">
+            <h3>Інтерстеллар</h3>
+            <p class="genre">Наукова Фантастика</p>
+            <div class="movie-meta"><span class="rating">12+</span><span class="price">від 180 грн</span></div>
+        </div>
+    </div>
+
+    <!-- Картка 3 -->
+    <div class="movie-card fade-in" style="animation-delay: 0.2s">
+        <div class="poster-container">
+            <img src="https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg" alt="Оппенгеймер">
+            <div class="overlay"><a href="Booking.html" class="btn-buy">Купити квиток</a></div>
+        </div>
+        <div class="movie-info">
+            <h3>Оппенгеймер</h3>
+            <p class="genre">Драма, Біографія</p>
+            <div class="movie-meta"><span class="rating">18+</span><span class="price">від 220 грн</span></div>
+        </div>
+    </div>
+
+    <!-- Картка 4 -->
+    <div class="movie-card fade-in" style="animation-delay: 0.3s">
+        <div class="poster-container">
+            <img src="https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="Дедпул і Росомаха" onerror="this.src='https://via.placeholder.com/500x750/1c1c1e/e50914?text=Deadpool'">
+            <div class="overlay"><a href="Booking.html" class="btn-buy">Купити квиток</a></div>
+        </div>
+        <div class="movie-info">
+            <h3>Дедпул і Росомаха</h3>
+            <p class="genre">Екшн та Бойовики</p>
+            <div class="movie-meta"><span class="rating">18+</span><span class="price">від 210 грн</span></div>
+        </div>
+    </div>
+
+    <!-- Картка 5 -->
+    <div class="movie-card fade-in" style="animation-delay: 0.4s">
+        <div class="poster-container">
+            <img src="https://image.tmdb.org/t/p/w500/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg" alt="Думками навиворіт 2" onerror="this.src='https://via.placeholder.com/500x750/1c1c1e/e50914?text=Inside+Out+2'">
+            <div class="overlay"><a href="Booking.html" class="btn-buy">Купити квиток</a></div>
+        </div>
+        <div class="movie-info">
+            <h3>Думками навиворіт 2</h3>
+            <p class="genre">Анімація та Сімейні</p>
+            <div class="movie-meta"><span class="rating">0+</span><span class="price">від 160 грн</span></div>
+        </div>
+    </div>
+
+    <!-- Картка 6 -->
+    <div class="movie-card fade-in" style="animation-delay: 0.5s">
+        <div class="poster-container">
+            <img src="https://image.tmdb.org/t/p/w500/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg" alt="Кунг-Фу Панда 4" onerror="this.src='https://via.placeholder.com/500x750/1c1c1e/e50914?text=Kung+Fu+Panda+4'">
+            <div class="overlay"><a href="Booking.html" class="btn-buy">Купити квиток</a></div>
+        </div>
+        <div class="movie-info">
+            <h3>Кунг-Фу Панда 4</h3>
+            <p class="genre">Анімація та Сімейні</p>
+            <div class="movie-meta"><span class="rating">0+</span><span class="price">від 150 грн</span></div>
+        </div>
+    </div>
+</div>

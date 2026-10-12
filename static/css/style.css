@@ -1,0 +1,450 @@
+:root {
+    --bg-main: #0f0f11;
+    --bg-card: #1c1c1e;
+    --accent: #e50914;
+    --accent-hover: #b20710;
+    --text-main: #ffffff;
+    --text-muted: #a1a1aa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Навігація зі скляним ефектом */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: rgba(15, 15, 17, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--accent);
+    letter-spacing: 1px;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--accent);
+}
+
+.admin-link {
+    color: var(--text-muted) !important;
+    font-size: 14px;
+}
+
+/* Банер */
+.hero {
+    height: 75vh;
+    background: linear-gradient(to bottom, rgba(15,15,17,0.2) 0%, rgba(15,15,17,1) 100%), 
+                url('https://image.tmdb.org/t/p/original/8rpDcsfLJypbO6vtecsozsPbHMZ.jpg') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 35px;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: white;
+    padding: 14px 35px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(229, 9, 20, 0.6);
+}
+
+/* Контейнер */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+/* Сітка фільмів */
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 35px;
+}
+
+.movie-card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+}
+
+.poster-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.poster-container img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.movie-card:hover .poster-container img {
+    transform: scale(1.08); /* Плавне збільшення постера */
+}
+
+/* Затемнення при наведенні */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.movie-card:hover .overlay {
+    opacity: 1;
+}
+
+.btn-buy {
+    background: var(--accent);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.movie-card:hover .btn-buy {
+    transform: translateY(0);
+}
+
+.btn-buy:hover {
+    background: var(--accent-hover);
+}
+
+/* Інформація про фільм */
+.movie-info {
+    padding: 20px;
+}
+
+.movie-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.genre {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.movie-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rating {
+    background: rgba(255,255,255,0.1);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.price {
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Анімація появи елементів */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Сторінка вибору місць */
+.booking-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 80px;
+}
+
+.movie-info-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.movie-info-header h2 {
+    color: var(--accent);
+    font-size: 2rem;
+}
+
+.showcase {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    width: 300px;
+    margin: 0 auto 40px auto;
+}
+
+.showcase li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+.showcase li small {
+    margin-left: 10px;
+}
+
+.cinema-room {
+    perspective: 1000px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.screen {
+    background: #fff;
+    height: 70px;
+    width: 100%;
+    max-width: 400px;
+    margin: 15px 0 40px 0;
+    transform: rotateX(-45deg);
+    box-shadow: 0 3px 20px rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.seat {
+    background-color: #444451;
+    height: 35px;
+    width: 40px;
+    margin: 5px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.seat:not(.occupied):hover {
+    transform: scale(1.1);
+    background-color: #666675;
+}
+
+.seat.selected {
+    background-color: var(--accent);
+}
+
+.seat.occupied {
+    background-color: #1a1a1f;
+    cursor: not-allowed;
+}
+
+.checkout-panel {
+    background: var(--bg-card);
+    padding: 20px 40px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.checkout-panel .text {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.checkout-panel span {
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+#checkout-btn {
+    margin-top: 15px;
+    opacity: 0.5;
+}
+/* Стилі для сторінки авторизації */
+.auth-body {
+    background: linear-gradient(rgba(15,15,17,0.8), rgba(15,15,17,0.9)), 
+                url('https://image.tmdb.org/t/p/original/8rpDcsfLJypbO6vtecsozsPbHMZ.jpg') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+.auth-box {
+    background: rgba(28, 28, 30, 0.95);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+}
+
+.auth-box h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-muted);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    color: white;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.role-selector {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 25px;
+}
+
+.auth-btn {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+.auth-footer {
+    margin-top: 20px;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.auth-footer a {
+    color: var(--accent);
+    text-decoration: none;
+}
